@@ -7,6 +7,5 @@
   },
   "files.exclude": {
     "**/.next": true
-  },
-  "eslint.packageManager": "pnpm"
+  }
 }
