@@ -1,4 +1,4 @@
-import ClientProviders from "@/components/client-providers";
+import ClientProviders from "@/components/Auth/client-providers";
 import { Inter } from "next/font/google";
 import "./globals.css";
 

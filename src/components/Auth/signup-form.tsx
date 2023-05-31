@@ -12,6 +12,7 @@ export const SignupForm = () => {
     <div className="p-4">
       {!session ? (
         <Auth
+          providers={["google", "facebook"]}
           supabaseClient={supabase}
           appearance={{ theme: ThemeSupa }}
           theme="dark"
