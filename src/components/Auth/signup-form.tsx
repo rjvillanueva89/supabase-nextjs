@@ -3,6 +3,7 @@
 import { useSession, useSupabaseClient } from "@supabase/auth-helpers-react";
 import { Auth } from "@supabase/auth-ui-react";
 import { ThemeSupa } from "@supabase/auth-ui-shared";
+import Account from "../accounts";
 
 export const SignupForm = () => {
   const session = useSession();
@@ -18,7 +19,7 @@ export const SignupForm = () => {
           theme="dark"
         />
       ) : (
-        <p>Account page will go here.</p>
+        <Account session={session} />
       )}
     </div>
   );
