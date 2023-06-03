@@ -1,0 +1,20 @@
+{
+  "version": "5",
+  "dialect": "pg",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1685825127104,
+      "tag": "0000_concerned_the_watchers",
+      "breakpoints": false
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1685833172396,
+      "tag": "0001_late_miss_america",
+      "breakpoints": false
+    }
+  ]
+}

@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "supabase:types": "supabase gen types typescript --project-id ppktgnirukzmjgdctcid --schema public > src/types/supabase.ts",
-    "migrate": "drizzle-kit up:pg --config ./drizzle.config.ts"
+    "migrate": "npx drizzle-kit generate:pg --config ./drizzle.config.ts"
   },
   "dependencies": {
     "@supabase/auth-helpers-nextjs": "^0.7.0",
