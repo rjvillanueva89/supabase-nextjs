@@ -1,5 +1,5 @@
 CREATE TABLE IF NOT EXISTS "products" (
-	"id" uuid PRIMARY KEY DEFAULT get_random_uuid() NOT NULL,
+	"id" uuid PRIMARY KEY DEFAULT gen_random_uuid() NOT NULL,
 	"name" text NOT NULL,
 	"description" text,
 	"create_by" uuid,
@@ -7,7 +7,7 @@ CREATE TABLE IF NOT EXISTS "products" (
 );
 
 CREATE TABLE IF NOT EXISTS "profiles" (
-	"id" uuid DEFAULT get_random_uuid(),
+	"id" uuid DEFAULT gen_random_uuid(),
 	"full_name" text NOT NULL,
 	"username" text NOT NULL,
 	"avatar_url" text,
@@ -15,7 +15,7 @@ CREATE TABLE IF NOT EXISTS "profiles" (
 );
 
 CREATE TABLE IF NOT EXISTS "purchase_request_items" (
-	"id" uuid PRIMARY KEY DEFAULT get_random_uuid() NOT NULL,
+	"id" uuid PRIMARY KEY DEFAULT gen_random_uuid() NOT NULL,
 	"purchase_request_id" uuid NOT NULL,
 	"product_id" uuid NOT NULL,
 	"quantity" numeric NOT NULL,
@@ -25,7 +25,7 @@ CREATE TABLE IF NOT EXISTS "purchase_request_items" (
 );
 
 CREATE TABLE IF NOT EXISTS "purchase_requests" (
-	"id" uuid PRIMARY KEY DEFAULT get_random_uuid() NOT NULL,
+	"id" uuid PRIMARY KEY DEFAULT gen_random_uuid() NOT NULL,
 	"supplier_id" uuid NOT NULL,
 	"delivery_date" timestamp,
 	"status" text,
@@ -45,7 +45,7 @@ CREATE TABLE IF NOT EXISTS "status" (
 );
 
 CREATE TABLE IF NOT EXISTS "supplier_products" (
-	"id" uuid PRIMARY KEY DEFAULT get_random_uuid() NOT NULL,
+	"id" uuid PRIMARY KEY DEFAULT gen_random_uuid() NOT NULL,
 	"supplier_id" uuid NOT NULL,
 	"product_id" uuid NOT NULL,
 	"price" numeric,
@@ -54,7 +54,7 @@ CREATE TABLE IF NOT EXISTS "supplier_products" (
 );
 
 CREATE TABLE IF NOT EXISTS "suppliers" (
-	"id" uuid PRIMARY KEY DEFAULT get_random_uuid() NOT NULL,
+	"id" uuid PRIMARY KEY DEFAULT gen_random_uuid() NOT NULL,
 	"name" text NOT NULL,
 	"created_by" uuid NOT NULL,
 	"created_at" timestamp DEFAULT now(),
@@ -62,7 +62,7 @@ CREATE TABLE IF NOT EXISTS "suppliers" (
 );
 
 CREATE TABLE IF NOT EXISTS "trader_products" (
-	"id" uuid PRIMARY KEY DEFAULT get_random_uuid() NOT NULL,
+	"id" uuid PRIMARY KEY DEFAULT gen_random_uuid() NOT NULL,
 	"trader_id" uuid NOT NULL,
 	"product_id" uuid NOT NULL,
 	"price" numeric,
@@ -80,7 +80,7 @@ CREATE TABLE IF NOT EXISTS "trader_users" (
 );
 
 CREATE TABLE IF NOT EXISTS "traders" (
-	"id" uuid PRIMARY KEY DEFAULT get_random_uuid() NOT NULL,
+	"id" uuid PRIMARY KEY DEFAULT gen_random_uuid() NOT NULL,
 	"name" text NOT NULL,
 	"status" text,
 	"created_at" timestamp DEFAULT now(),
@@ -88,7 +88,7 @@ CREATE TABLE IF NOT EXISTS "traders" (
 );
 
 CREATE TABLE IF NOT EXISTS "users" (
-	"id" uuid PRIMARY KEY DEFAULT get_random_uuid() NOT NULL,
+	"id" uuid PRIMARY KEY DEFAULT gen_random_uuid() NOT NULL,
 	"name" text NOT NULL,
 	"email" text NOT NULL,
 	"phone" text,

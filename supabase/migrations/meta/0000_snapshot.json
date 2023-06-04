@@ -1,7 +1,7 @@
 {
   "version": "5",
   "dialect": "pg",
-  "id": "ff1b3478-f160-4dad-b912-c1eb7099eca5",
+  "id": "5efd1aa8-a055-45c8-9462-3c3da1c35ec9",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "tables": {
     "products": {
@@ -13,7 +13,7 @@
           "type": "uuid",
           "primaryKey": true,
           "notNull": true,
-          "default": "get_random_uuid()"
+          "default": "gen_random_uuid()"
         },
         "name": {
           "name": "name",
@@ -68,7 +68,7 @@
           "type": "uuid",
           "primaryKey": false,
           "notNull": false,
-          "default": "get_random_uuid()"
+          "default": "gen_random_uuid()"
         },
         "full_name": {
           "name": "full_name",
@@ -109,7 +109,7 @@
           "type": "uuid",
           "primaryKey": true,
           "notNull": true,
-          "default": "get_random_uuid()"
+          "default": "gen_random_uuid()"
         },
         "purchase_request_id": {
           "name": "purchase_request_id",
@@ -202,7 +202,7 @@
           "type": "uuid",
           "primaryKey": true,
           "notNull": true,
-          "default": "get_random_uuid()"
+          "default": "gen_random_uuid()"
         },
         "supplier_id": {
           "name": "supplier_id",
@@ -324,7 +324,7 @@
           "type": "uuid",
           "primaryKey": true,
           "notNull": true,
-          "default": "get_random_uuid()"
+          "default": "gen_random_uuid()"
         },
         "supplier_id": {
           "name": "supplier_id",
@@ -398,7 +398,7 @@
           "type": "uuid",
           "primaryKey": true,
           "notNull": true,
-          "default": "get_random_uuid()"
+          "default": "gen_random_uuid()"
         },
         "name": {
           "name": "name",
@@ -453,7 +453,7 @@
           "type": "uuid",
           "primaryKey": true,
           "notNull": true,
-          "default": "get_random_uuid()"
+          "default": "gen_random_uuid()"
         },
         "trader_id": {
           "name": "trader_id",
@@ -600,7 +600,7 @@
           "type": "uuid",
           "primaryKey": true,
           "notNull": true,
-          "default": "get_random_uuid()"
+          "default": "gen_random_uuid()"
         },
         "name": {
           "name": "name",
@@ -641,7 +641,7 @@
           "type": "uuid",
           "primaryKey": true,
           "notNull": true,
-          "default": "get_random_uuid()"
+          "default": "gen_random_uuid()"
         },
         "name": {
           "name": "name",

@@ -5,7 +5,7 @@ import { traders } from "./traders";
 
 export const purchase_requests = pgTable("purchase_requests", {
   id: uuid("id")
-    .default(sql`get_random_uuid()`)
+    .default(sql`gen_random_uuid()`)
     .primaryKey(),
   supplier_id: uuid("supplier_id")
     .notNull()

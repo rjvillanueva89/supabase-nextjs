@@ -6,7 +6,7 @@ import { users } from "./users";
 
 export const purchase_request_items = pgTable("purchase_request_items", {
   id: uuid("id")
-    .default(sql`get_random_uuid()`)
+    .default(sql`gen_random_uuid()`)
     .primaryKey(),
   purchase_request_id: uuid("purchase_request_id")
     .notNull()
