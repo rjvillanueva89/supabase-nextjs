@@ -3,7 +3,9 @@ import { pgTable, text, timestamp, uuid } from "drizzle-orm/pg-core";
 import { profiles } from "./profiles";
 
 export const products = pgTable("products", {
-  id: uuid("id").default(sql`get_random_uuid()`),
+  id: uuid("id")
+    .default(sql`get_random_uuid()`)
+    .primaryKey(),
   name: text("name").notNull(),
   description: text("description"),
   created_by: uuid("create_by").references(() => profiles.id),
