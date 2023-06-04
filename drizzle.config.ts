@@ -35,6 +35,6 @@ const createConnectionString = () => {
 
 module.exports = {
   schema: "./src/schema",
-  out: "./src/db",
+  out: "./supabase/migrations",
   connectionString: createConnectionString(),
 } satisfies Config;
