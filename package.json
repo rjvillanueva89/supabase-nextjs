@@ -10,10 +10,10 @@
     "gentypes:local": "npx supabase gen types typescript --local > src/lib/database.types.ts",
     "db:generate": "drizzle-kit generate:pg --config=./drizzle.config.ts",
     "db:up": "npx supabase migration up",
-    "db:reset": "npx supabase db reset",
+    "db:reset": "npx supabase db reset --linked",
     "gentypes:linked": "npx supabase gen types typescript --linked > src/lib/database.types.ts",
-    "db:push:linked": "npx supabase db push --local",
-    "db:pull:linked": "npx supabase db dump"
+    "db:push:linked": "npx supabase db push",
+    "db:pull:linked": "npx supabase db dump --linked"
   },
   "dependencies": {
     "@supabase/auth-helpers-nextjs": "0.7.0",

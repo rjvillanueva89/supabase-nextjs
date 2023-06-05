@@ -1,7 +1,7 @@
 {
   "version": "5",
   "dialect": "pg",
-  "id": "5efd1aa8-a055-45c8-9462-3c3da1c35ec9",
+  "id": "f79967e5-ca36-4e34-be31-a065897de729",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "tables": {
     "products": {
@@ -84,6 +84,12 @@
         },
         "avatar_url": {
           "name": "avatar_url",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "website": {
+          "name": "website",
           "type": "text",
           "primaryKey": false,
           "notNull": false

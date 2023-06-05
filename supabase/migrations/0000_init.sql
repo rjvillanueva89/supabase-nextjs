@@ -11,6 +11,7 @@ CREATE TABLE IF NOT EXISTS "profiles" (
 	"full_name" text NOT NULL,
 	"username" text NOT NULL,
 	"avatar_url" text,
+	"website" text,
 	"updated_at" timestamp DEFAULT now()
 );
 
