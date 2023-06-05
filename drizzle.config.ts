@@ -1,11 +1,13 @@
+import dotenv from "dotenv";
 import type { Config } from "drizzle-kit";
+
+dotenv.config();
 
 const config: Config = {
   out: "./supabase/migrations",
-  schema: "./src/schema",
+  schema: "./src/db/schema.ts",
   breakpoints: false,
-  connectionString:
-    "postgresql://postgres:ZIaVEH2UUqTf9mUp@db.oskrwkiozbagbticjscy.supabase.co:5432/postgres",
+  connectionString: process.env["DATABASE_URL"],
 };
 
 export default config;
