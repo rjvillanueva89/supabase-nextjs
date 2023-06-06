@@ -1,14 +1,16 @@
 import ClientProviders from "@/components/Auth/client-providers";
-import { SignupForm } from "@/components/Auth/signup-form";
+import { ProductTable } from "@/components/product-table";
 
-export default function Home() {
+const Product = () => {
   return (
     <ClientProviders>
       <div className="h-screen w-full flex items-center justify-center">
         <div className="w-96">
-          <SignupForm />
+          <ProductTable />
         </div>
       </div>
     </ClientProviders>
   );
-}
+};
+
+export default Product;

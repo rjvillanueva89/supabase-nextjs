@@ -1,4 +1,3 @@
-import ClientProviders from "@/components/Auth/client-providers";
 import { Inter } from "next/font/google";
 import "./globals.css";
 
@@ -12,9 +11,7 @@ export const metadata = {
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <ClientProviders>{children}</ClientProviders>
-      </body>
+      <body className={inter.className}>{children}</body>
     </html>
   );
 };

@@ -7,7 +7,7 @@ CREATE TABLE IF NOT EXISTS "products" (
 );
 
 CREATE TABLE IF NOT EXISTS "profiles" (
-	"id" uuid DEFAULT gen_random_uuid(),
+	"id" uuid PRIMARY KEY DEFAULT gen_random_uuid() NOT NULL,
 	"full_name" text NOT NULL,
 	"username" text NOT NULL,
 	"avatar_url" text,

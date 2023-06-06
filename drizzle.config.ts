@@ -5,7 +5,7 @@ dotenv.config();
 
 const config: Config = {
   out: "./supabase/migrations",
-  schema: "./src/db/schema.ts",
+  schema: "./src/schema",
   breakpoints: false,
   connectionString: process.env["DATABASE_URL"],
 };
