@@ -1,29 +1,53 @@
 "use client";
 
+import { ProductForm } from "@/components/product-form";
+import { ProductTable } from "@/components/product-table";
 import { Database } from "@/lib/database.types";
+import useToggle from "@/utils/useToggle";
 import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
+import { useEffect, useState } from "react";
 
-const Product = async () => {
+export type ProductData = {
+  id: string;
+  name: string;
+  description: string | null;
+  create_by: string | null;
+  created_at: string;
+};
+
+const Product = () => {
   const supabase = createClientComponentClient<Database>();
-  const { data: products, error } = await supabase.from("products").select();
+  const [products, setProducts] = useState<ProductData[] | null>();
+  const { state: isFormOpen, open: openForm, close: closeForm } = useToggle();
+
+  const getProducts = async () => {
+    const { data, error } = await supabase.from("products").select();
+    setProducts(data);
+  };
+
+  useEffect(() => {
+    getProducts();
+  }, [isFormOpen]);
 
   return (
     <div className="h-screen w-full flex items-center justify-center">
       <div className="w-96">
-        <table className="table">
-          <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Description</th>
-          </tr>
-          {products?.map((product, key) => (
-            <tr key={key}>
-              <td>{product.id}</td>
-              <td>{product.name}</td>
-              <td>{product.description}</td>
-            </tr>
-          ))}
-        </table>
+        <div className="mb-4 text-right">
+          {isFormOpen ? (
+            <button className="btn" onClick={closeForm}>
+              Back
+            </button>
+          ) : (
+            <button className="btn" onClick={openForm}>
+              New
+            </button>
+          )}
+        </div>
+        {isFormOpen ? (
+          <ProductForm onSubmit={closeForm} />
+        ) : (
+          <ProductTable products={products} />
+        )}
       </div>
     </div>
   );

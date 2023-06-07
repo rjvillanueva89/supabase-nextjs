@@ -1,9 +1,12 @@
-"use client";
 import { Database } from "@/lib/database.types";
 import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
 import { useState } from "react";
 
-const ProductForm = () => {
+interface Props {
+  onSubmit: VoidFunction;
+}
+
+export const ProductForm = ({ onSubmit }: Props) => {
   const supabase = createClientComponentClient<Database>();
 
   const [name, setName] = useState<string>("");
@@ -11,6 +14,7 @@ const ProductForm = () => {
 
   const handleSubmit = async () => {
     await supabase.from("products").insert({ name, description });
+    onSubmit();
   };
 
   return (
@@ -20,7 +24,7 @@ const ProductForm = () => {
         onChange={(e) => setName(e.currentTarget.value)}
         value={name}
         placeholder="Name"
-        className="input input-bordered w-full max-w-xs"
+        className="input input-bordered w-full"
       />
       <textarea
         className="textarea textarea-bordered"
@@ -35,5 +39,3 @@ const ProductForm = () => {
     </form>
   );
 };
-
-export default ProductForm;
