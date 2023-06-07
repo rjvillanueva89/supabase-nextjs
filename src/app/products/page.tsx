@@ -30,25 +30,23 @@ const Product = () => {
   }, [isFormOpen]);
 
   return (
-    <div className="h-screen w-full flex items-center justify-center">
-      <div className="w-96">
-        <div className="mb-4 text-right">
-          {isFormOpen ? (
-            <button className="btn" onClick={closeForm}>
-              Back
-            </button>
-          ) : (
-            <button className="btn" onClick={openForm}>
-              New
-            </button>
-          )}
-        </div>
+    <div className="w-96">
+      <div className="mb-4 text-right">
         {isFormOpen ? (
-          <ProductForm onSubmit={closeForm} />
+          <button className="btn" onClick={closeForm}>
+            Back
+          </button>
         ) : (
-          <ProductTable products={products} />
+          <button className="btn" onClick={openForm}>
+            New
+          </button>
         )}
       </div>
+      {isFormOpen ? (
+        <ProductForm onSubmit={closeForm} />
+      ) : (
+        <ProductTable products={products} />
+      )}
     </div>
   );
 };
